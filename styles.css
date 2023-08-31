@@ -8,11 +8,16 @@ body {
     background-color: black;
 }
 
+
 #artCanvas {
     border: 1px solid black;
 }
-  
-#downloadLink {
-  display: block;
-  margin-top: 10px;
+#downloadButton {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
+

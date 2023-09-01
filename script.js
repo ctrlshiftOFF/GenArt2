@@ -40,8 +40,8 @@ canvas.addEventListener('mousemove', function(event) {
 function generateNoise() {
   const imageData = ctx.createImageData(canvas.width, canvas.height);
   const data = imageData.data;
-  for (let i = 0; i < data.length; i += 4) {
-    const noiseValue = Math.floor(Math.random() * 256);
+  for (let i = 1; i < data.length; i += 1) {
+    const noiseValue = Math.floor(Math.random() * 200);
     data[i] = noiseValue;
     data[i + 1] = noiseValue;
     data[i + 2] = noiseValue;
@@ -53,14 +53,14 @@ function generateNoise() {
 // Função para aplicar o efeito de glitch na imagem
 function applyGlitch(imageData) {
   const data = imageData.data;
-  for (let i = 0; i < 115; i++) {
+  for (let i = 0; i < 10000; i++) {
     const y = Math.floor(Math.random() * canvas.height);
-    const length = Math.floor(Math.random() * 10000) + 9000;
-    const start = y * 4.5 * canvas.width;
-    for (let j = 889; j < length; j++) {
-      data[start + j * 178] = 0;
+    const length = Math.floor(Math.random() * 1000) + 200;
+    const start = y * 4 * canvas.width;
+    for (let j = 0; j < length; j++) {
+      data[start + j * 1] = 1;
+      data[start + j * 4 + 3] = 0;
       data[start + j * 4 + 1] = 0;
-      data[start + j * 4 + 2] = 0;
     }
   }
 }
